@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart City Integrated Command Center</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<header>🌆 SMART CITY INTEGRATED COMMAND CENTER</header>
+
+<div class="dashboard">
+
+<!-- SMART MOBILITY -->
+<div class="card" onclick="focusCard(this)">
+<h2>🚦 Smart Mobility</h2>
+<p>Traffic Load: <span id="traffic">--</span>%</p>
+<p>Status: <span id="trafficStatus">Optimal Flow</span></p>
+<button onclick="optimizeTraffic(event)">AI Optimize</button>
+</div>
+
+<!-- ENERGY -->
+<div class="card" onclick="focusCard(this)">
+<h2>⚡ Energy Grid</h2>
+<p>Solar Output: <span id="solar">--</span> kW</p>
+<p>Carbon Index: <span id="carbon">--</span></p>
+<p>ESG Score: <span id="esg">--</span>/100</p>
+</div>
+
+<!-- RISK -->
+<div class="card" onclick="focusCard(this)">
+<h2>🚨 AI Risk Monitor</h2>
+<p id="riskAlert">No Alerts</p>
+</div>
+
+<!-- DIGITAL GOVERNANCE -->
+<div class="card" onclick="focusCard(this)">
+<h2>🏛 Digital Governance</h2>
+
+<div id="loginSection">
+<input id="username" placeholder="Admin Username">
+
+<div class="password-box">
+<input id="password" type="password" placeholder="Password">
+<span onclick="togglePassword()">👁️</span>
+</div>
+
+<button onclick="login()">Login</button>
+</div>
+
+<div id="governancePanel" style="display:none;">
+<input id="complaintInput" placeholder="Enter Complaint">
+<button onclick="addComplaint()">Submit</button>
+<div id="complaintList"></div>
+<p>Efficiency: <span id="efficiency">100</span>%</p>
+</div>
+
+</div>
+
+<!-- MAP -->
+<div class="card" onclick="focusCard(this)">
+<h2>🗺 City Map</h2>
+<div id="map"></div>
+</div>
+
+<!-- AI ASSISTANT -->
+<div class="card" onclick="focusCard(this)">
+<h2>🤖 AI Assistant</h2>
+<div id="chatbox"></div>
+<input id="chatInput" placeholder="Ask traffic, AQI, energy...">
+<button onclick="chat()">Send</button>
+</div>
+
+<!-- DATA DRIVEN -->
+<div class="card">
+<h2>📊 Data-Driven Public Services</h2>
+<p>Service Efficiency: <span id="efficiency">100</span>%</p>
+<p>Active Complaints: <span id="activeComplaints">0</span></p>
+<p>System Performance Index: <span id="performance">--</span></p>
+</div>
+
+<!-- CHART -->
+<div class="card">
+<canvas id="chart"></canvas>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
